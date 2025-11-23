@@ -1,0 +1,256 @@
+.ai-page {
+  min-height: 100vh;
+  background: white;
+}
+
+/* Hero Section */
+.ai-hero {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  color: white;
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.ai-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ai-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.ai-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Introduction Section */
+.ai-intro {
+  background: white;
+}
+
+.ai-intro-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ai-intro-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.ai-intro-text strong {
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+/* About Section */
+.ai-about {
+  background: hsl(var(--muted));
+}
+
+.ai-about-content {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+}
+
+.ai-about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.ai-about-text strong {
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+/* Core Areas & LLMS Sections */
+.ai-core {
+  background: white;
+}
+
+.ai-llms {
+  background: hsl(var(--muted));
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .ai-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ai-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.ai-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ai-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.ai-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ai-card:hover .ai-card-image img {
+  transform: scale(1.1);
+}
+
+.ai-card-title {
+  font-size: 1.25rem;
+  color: hsl(var(--navy));
+  padding: 1.5rem 1.5rem 0.75rem;
+  margin: 0;
+  text-align: center;
+}
+
+.ai-card-description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+  padding: 0 1.5rem 1.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Getting Started Section */
+.ai-start {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-start::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ai-start-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-start-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ai-start-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-start-btn {
+  background: white !important;
+  color: hsl(var(--primary)) !important;
+  border: none !important;
+  font-weight: 700;
+  padding: 0.75rem 2.5rem !important;
+  height: auto !important;
+  font-size: 1rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ai-start-btn:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ai-hero {
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .ai-hero-title {
+    font-size: 2rem;
+  }
+
+  .ai-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-start {
+    padding: 3rem 1.5rem;
+  }
+
+  .ai-start-title {
+    font-size: 1.75rem;
+  }
+
+  .ai-start-description {
+    font-size: 1rem;
+  }
+}

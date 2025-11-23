@@ -1,0 +1,130 @@
+.cta {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.cta-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+  background: white !important;
+  color: hsl(var(--primary)) !important;
+  border: none !important;
+  font-weight: 700;
+  padding: 0.75rem 2rem !important;
+  height: auto !important;
+  font-size: 1rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn-primary:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cta-phone {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cta-phone-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-phone-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.cta-phone-number {
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.cta-character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-character img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+@media (min-width: 1024px) {
+  .cta-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 3rem 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-btn-primary {
+    width: 100%;
+  }
+
+  .cta-character img {
+    max-width: 300px;
+  }
+}

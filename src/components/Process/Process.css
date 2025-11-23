@@ -1,0 +1,140 @@
+.process {
+  background: hsl(var(--muted));
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-badge {
+  color: hsl(var(--primary));
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.process-steps-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.step-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: white;
+  border: 2px solid hsl(var(--border));
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-nav-btn:hover {
+  border-color: hsl(var(--primary));
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(35, 56, 255, 0.15);
+}
+
+.step-nav-btn.active {
+  background: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+  color: white;
+  box-shadow: 0 8px 24px rgba(35, 56, 255, 0.3);
+}
+
+.step-number {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.step-arrow {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.5rem;
+}
+
+.step-nav-btn.active .step-arrow {
+  color: white;
+}
+
+.process-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.process-content-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: hsl(var(--navy));
+  margin-bottom: 2rem;
+}
+
+.step-label {
+  color: hsl(var(--primary));
+}
+
+.process-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.process-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: hsl(var(--muted));
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.process-item:hover {
+  background: hsl(var(--primary) / 0.05);
+  transform: translateX(8px);
+}
+
+.process-item-icon {
+  color: hsl(var(--primary));
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.process-item-title {
+  font-weight: 700;
+  color: hsl(var(--navy));
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.process-item-desc {
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .process-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .process-items {
+    grid-template-columns: 1fr;
+  }
+
+  .step-nav-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .step-arrow {
+    display: none;
+  }
+}

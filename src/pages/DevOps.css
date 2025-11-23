@@ -1,0 +1,277 @@
+.devops-page {
+  min-height: 100vh;
+  background: white;
+}
+
+.devops-hero {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  color: white;
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.devops-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.devops-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.devops-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.devops-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.devops-intro {
+  background: white;
+}
+
+.devops-intro-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.devops-intro-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.devops-intro-text strong {
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+.devops-practices {
+  background: hsl(var(--muted));
+}
+
+.devops-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .devops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .devops-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.devops-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.devops-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.devops-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.devops-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.devops-card:hover .devops-card-image img {
+  transform: scale(1.1);
+}
+
+.devops-card-title {
+  font-size: 1.25rem;
+  color: hsl(var(--navy));
+  padding: 1.5rem 1.5rem 0.75rem;
+  margin: 0;
+  text-align: center;
+}
+
+.devops-card-description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+  padding: 0 1.5rem 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.devops-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1.5rem 1.5rem;
+  justify-content: center;
+}
+
+.devops-tool {
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.devops-services {
+  background: white;
+}
+
+.devops-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.devops-service-card {
+  background: hsl(var(--muted));
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.devops-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.devops-service-title {
+  font-size: 1.25rem;
+  color: hsl(var(--navy));
+  margin-bottom: 0.75rem;
+}
+
+.devops-service-description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+  margin: 0;
+}
+
+.devops-benefits {
+  background: hsl(var(--muted));
+}
+
+.devops-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.devops-benefit-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  border-left: 4px solid hsl(var(--primary));
+}
+
+.devops-benefit-title {
+  font-size: 1.125rem;
+  color: hsl(var(--navy));
+  margin-bottom: 0.5rem;
+}
+
+.devops-benefit-description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+  margin: 0;
+}
+
+.devops-cta {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.devops-cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.devops-cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.devops-cta-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.devops-cta-btn {
+  background: white !important;
+  color: hsl(var(--primary)) !important;
+  border: none !important;
+  font-weight: 700;
+  padding: 0.75rem 2.5rem !important;
+  height: auto !important;
+  font-size: 1rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.devops-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .devops-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .devops-hero-title {
+    font-size: 2rem;
+  }
+
+  .devops-hero-subtitle {
+    font-size: 1rem;
+  }
+}
