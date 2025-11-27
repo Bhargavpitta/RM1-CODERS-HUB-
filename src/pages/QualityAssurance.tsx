@@ -47,6 +47,7 @@ const QualityAssurance = () => {
         <h1 className="qa-hero-title font-display">Quality Assurance</h1>
       </section>
 
+      {/* INTRO */}
       <section className="qa-section">
         <div className="container-custom">
           <motion.div
@@ -59,12 +60,16 @@ const QualityAssurance = () => {
               Comprehensive Quality Assurance & Testing Services
             </h2>
             <p className="qa-intro-text">
-              At <strong>RMI Coders</strong>, we believe quality is not just about finding defects—it's about preventing them. Our QA and testing services are designed to ensure your software meets the highest standards of functionality, performance, security, and user experience. With a team of ISTQB-certified QA engineers and automation experts, we provide end-to-end testing solutions covering manual, automated, performance, security, and specialized testing. Our comprehensive test strategies identify issues early in the development cycle, reducing costs and accelerating time-to-market while ensuring your applications deliver exceptional value to end-users across all platforms and devices.
+              At <strong>RMI Coders</strong>, we believe quality is not just about finding defects—it's about preventing them.
+              Our QA and testing services ensure your software meets the highest standards of functionality, performance, security,
+              and user experience. With a team of ISTQB-certified QA engineers and automation experts, we provide end-to-end
+              testing solutions covering manual, automated, performance, security, and specialized testing.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* QA PROCESS */}
       <section className="qa-section qa-bg-light">
         <div className="container-custom">
           <motion.div
@@ -89,15 +94,19 @@ const QualityAssurance = () => {
               >
                 <img src={imageMap[step.image]} alt={step.title} className="qa-card-image" />
                 <h3 className="qa-card-title font-display">{step.title}</h3>
-                {step.description && (
-                  <p className="qa-card-desc">{step.description}</p>
-                )}
+
+                <ul className="qa-card-list">
+                  {step.description.split("\n").map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* TESTING TYPES */}
       <section className="qa-section">
         <div className="container-custom">
           <motion.div
@@ -129,6 +138,7 @@ const QualityAssurance = () => {
         </div>
       </section>
 
+      {/* QA APPLICATION AREAS */}
       <section className="qa-section qa-bg-light">
         <div className="container-custom">
           <motion.div
@@ -139,7 +149,9 @@ const QualityAssurance = () => {
             className="qa-content-header"
           >
             <h2 className="qa-section-title font-display">QA Application Areas</h2>
-            <p className="qa-subtitle"><strong>RMI Coders</strong> provides QA services across diverse applications:</p>
+            <p className="qa-subtitle">
+              <strong>RMI Coders</strong> provides QA services across diverse applications:
+            </p>
           </motion.div>
 
           <div className="qa-domain-grid">
@@ -159,6 +171,7 @@ const QualityAssurance = () => {
         </div>
       </section>
 
+      {/* QA FEATURES */}
       <section className="qa-section">
         <div className="container-custom">
           <h2 className="qa-section-title font-display">QA Capabilities & Features</h2>
@@ -183,6 +196,7 @@ const QualityAssurance = () => {
         </div>
       </section>
 
+      {/* QA STANDARDS */}
       <section className="qa-section qa-bg-light">
         <div className="container-custom">
           <h2 className="qa-section-title font-display">Quality Standards & Certifications</h2>
@@ -200,6 +214,7 @@ const QualityAssurance = () => {
         </div>
       </section>
 
+      {/* WHY CHOOSE US */}
       <section className="qa-section">
         <div className="container-custom">
           <h2 className="qa-section-title font-display">Why Choose RMI Coders for QA?</h2>

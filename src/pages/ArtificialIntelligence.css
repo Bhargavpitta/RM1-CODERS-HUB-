@@ -63,13 +63,13 @@
 }
 
 .ai-intro-text strong {
-  color: hsl(var(--primary));
-  font-weight: 600;
+  color: #111;   /* black */
+  font-weight: 700; /* bold */
 }
 
 /* About Section */
 .ai-about {
-  background: hsl(var(--muted));
+  background: white;
 }
 
 .ai-about-content {
@@ -86,8 +86,8 @@
 }
 
 .ai-about-text strong {
-  color: hsl(var(--primary));
-  font-weight: 600;
+   color: #111;   /* black */
+  font-weight: 700;
 }
 
 /* Core Areas & LLMS Sections */
@@ -96,7 +96,7 @@
 }
 
 .ai-llms {
-  background: hsl(var(--muted));
+  background: white;
 }
 
 .ai-grid {
@@ -105,6 +105,13 @@
   gap: 2rem;
   margin-top: 3rem;
 }
+
+/* Reduce vertical space between all sections */
+.section-padding {
+  padding-top: 4rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
 
 @media (max-width: 1024px) {
   .ai-grid {
@@ -120,7 +127,7 @@
 
 .ai-card {
   background: white;
-  border-radius: 1rem;
+  border-radius: 0rem;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -253,4 +260,29 @@
   .ai-start-description {
     font-size: 1rem;
   }
+}
+
+/* FORCE CENTER ALIGN FOR ALL AI PAGE HEADINGS */
+.ai-page h1,
+.ai-page h2,
+.ai-page h3,
+.ai-page .section-title,
+.ai-page .ai-hero-title,
+.ai-page .ai-hero-subtitle,
+.ai-page .ai-start-title,
+.ai-page .ai-start-description {
+  text-align: center !important;
+}
+
+
+/* If container is flex/grid and pushing content left, fix it: */
+.ai-page .container-custom,
+.ai-page .ai-intro-content,
+.ai-page .ai-about-content,
+.ai-page .ai-start-content {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

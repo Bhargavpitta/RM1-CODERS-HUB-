@@ -1,3 +1,6 @@
+/* -----------------------------------------
+   HERO
+------------------------------------------*/
 .pm-hero {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
   color: white;
@@ -7,17 +10,21 @@
 
 .pm-hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   margin: 0;
 }
 
+/* -----------------------------------------
+   SECTIONS
+------------------------------------------*/
 .pm-section {
-  padding: 5rem 2rem;
+  padding: 4rem 2.5rem;
 }
 
 .pm-bg-light {
-  background: hsl(var(--muted));
+  background: #ffffff !important;
 }
+
 
 .pm-section-title {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
@@ -35,6 +42,9 @@
   text-align: justify;
 }
 
+/* -----------------------------------------
+   CONTENT HEADERS
+------------------------------------------*/
 .pm-content-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -46,6 +56,9 @@
   margin-top: 0.5rem;
 }
 
+/* -----------------------------------------
+   IMAGE GRID CARDS
+------------------------------------------*/
 .pm-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -55,7 +68,7 @@
 
 .pm-card {
   background: white;
-  border-radius: 1rem;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -94,38 +107,50 @@
   font-size: 0.9375rem;
 }
 
+/* -----------------------------------------
+   DOMAIN CARDS (MATCH SOFTWARE DEVELOPMENT CARDS)
+------------------------------------------*/
 .pm-domain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+  gap: 2.5rem !important;
+  margin-top: 3rem !important;
 }
 
 .pm-domain-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  border-left: 4px solid hsl(var(--primary));
-  transition: all 0.3s ease;
+  background: #fff !important;
+  padding: 2.5rem !important;
+  border-radius: 0 !important;
+  min-height: 230px !important;
+  border-left: none !important;
+
+  /* EXACT SD CARD SHADOW */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12) !important;
+
+  transition: all 0.35s ease !important;
 }
 
 .pm-domain-card:hover {
-  transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(35, 56, 255, 0.1);
+  transform: translateY(-20px) !important;
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25) !important;
 }
 
 .pm-domain-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin-bottom: 0.75rem;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.2rem !important;
+  color: hsl(var(--navy)) !important;
 }
 
 .pm-domain-desc {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-  margin: 0;
+  font-size: 1.05rem !important;
+  line-height: 1.85 !important;
+  color: #444 !important;
 }
 
+/* -----------------------------------------
+   TWO COLUMN SECTIONS
+------------------------------------------*/
 .pm-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,15 +175,19 @@
   color: hsl(var(--foreground));
   line-height: 2;
   font-size: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .pm-quality-image {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
+  width: 80%;
+  height: 260px;
+  border-radius: 0;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* -----------------------------------------
+   FEATURES GRID
+------------------------------------------*/
 .pm-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -169,7 +198,7 @@
 .pm-feature-card {
   background: white;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 0;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -187,10 +216,13 @@
 
 .pm-feature-text {
   color: hsl(var(--foreground));
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 
+/* -----------------------------------------
+   RESPONSIVE
+------------------------------------------*/
 @media (max-width: 768px) {
   .pm-hero {
     padding: 3rem 1rem;
@@ -205,7 +237,7 @@
   }
 
   .pm-domain-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .pm-two-col {

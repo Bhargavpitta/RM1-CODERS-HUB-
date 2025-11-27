@@ -2,35 +2,62 @@ export const sdlcSteps = [
   {
     id: 1,
     title: "Requirement Analysis",
-    image: "sdlc-requirement"
+    image: "sdlc-requirement",
+    points: [
+      "Engage stakeholders to capture business objectives.",
+      "Perform gap analysis, feasibility study, and risk assessments.",
+      "Create detailed requirement specifications and user stories."
+    ]
   },
   {
     id: 2,
     title: "System Design & Architecture",
-    image: "sdlc-design"
+    image: "sdlc-design",
+    points: [
+      "Define system architecture, database design, and integration.",
+      "Emphasis on scalability, performance, and security.",
+      "Use of UML diagrams, flowcharts, Figma, and design prototypes."
+    ]
   },
   {
     id: 3,
     title: "Development & Coding",
-    image: "sdlc-coding"
+    image: "sdlc-coding",
+    points: [
+      "Expertise in Agile, Scrum, and DevOps methodologies.",
+      "Hands-on proficiency with multiple programming languages and frameworks.",
+      "Strict adherence to coding standards, peer reviews, and version control."
+    ]
   },
   {
     id: 4,
     title: "Testing & Quality Assurance",
-    description: "Comprehensive Unit, Integration, System, and UAT testing.\nAutomation testing for faster release cycles.\nContinuous performance, scalability, and security testing.",
-    image: "sdlc-testing"
+    image: "sdlc-testing",
+    points: [
+      "Comprehensive Unit, Integration, System, and UAT testing.",
+      "Automation testing for faster release cycles.",
+      "Continuous performance, scalability, and security testing."
+    ]
   },
   {
     id: 5,
     title: "Deployment & Implementation",
-    description: "Seamless deployment across cloud, on-premises, and hybrid environments.\nUse of CI/CD pipelines for faster, reliable releases.\nThorough rollback and disaster recovery strategies.",
-    image: "sdlc-deployment"
+    image: "sdlc-deployment",
+    points: [
+      "Seamless deployment across cloud, on-premises, and hybrid environments.",
+      "Use of CI/CD pipelines for faster, reliable releases.",
+      "Thorough rollback and disaster recovery strategies."
+    ]
   },
   {
     id: 6,
     title: "Maintenance & Improvement",
-    description: "24/7 support and monitoring for mission-critical applications.\nRegular updates, patches, and optimizations.\nProactive enhancements based on analytics and user feedback.",
-    image: "sdlc-maintenance"
+    image: "sdlc-maintenance",
+    points: [
+      "24/7 support and monitoring for mission-critical applications.",
+      "Regular updates, patches, and performance optimizations.",
+      "Proactive enhancements based on analytics and user feedback."
+    ]
   }
 ];
 

@@ -1,3 +1,6 @@
+/* -----------------------------------------
+   HERO
+------------------------------------------*/
 .qa-hero {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
   color: white;
@@ -11,12 +14,15 @@
   margin: 0;
 }
 
+/* -----------------------------------------
+   SECTIONS
+------------------------------------------*/
 .qa-section {
-  padding: 5rem 2rem;
+  padding: 4rem 2.5rem;
 }
 
 .qa-bg-light {
-  background: hsl(var(--muted));
+  background: #ffffff !important;
 }
 
 .qa-section-title {
@@ -35,6 +41,9 @@
   text-align: justify;
 }
 
+/* -----------------------------------------
+   CONTENT HEADERS
+------------------------------------------*/
 .qa-content-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -46,86 +55,115 @@
   margin-top: 0.5rem;
 }
 
+/* -----------------------------------------
+   CARD GRID — SAME AS SOFTWARE DEVELOPMENT
+------------------------------------------*/
 .qa-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+  gap: 2.5rem !important;
+  margin-top: 3rem !important;
 }
 
+/* -----------------------------------------
+   CARD — EXACT SD STYLE
+------------------------------------------*/
 .qa-card {
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  background: #fff !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+
+  /* SD style shadow */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12) !important;
+  transition: all 0.35s ease !important;
 }
 
 .qa-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-20px) !important;
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25) !important;
 }
 
+/* CARD IMAGE */
 .qa-card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
 }
 
+/* CARD TITLE */
 .qa-card-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin: 1.5rem 1.5rem 1rem;
-  text-align: center;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin: 1.5rem 1.5rem 1rem !important;
+  text-align: center !important;
+  color: hsl(var(--navy)) !important;
 }
 
-.qa-card-desc {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-  margin: 0 1.5rem 1.5rem;
-  white-space: pre-line;
-  font-size: 0.9375rem;
-}
-
+/* CARD TEXT / TECHNOLOGIES */
 .qa-card-tech {
-  color: hsl(var(--muted-foreground));
-  margin: 0 1.5rem 1.5rem;
-  text-align: center;
-  font-size: 0.9375rem;
+  font-size: 1.05rem !important;
+  color: #444 !important;
+  margin: 0 1.5rem 1.5rem !important;
+  text-align: center !important;
+  line-height: 1.7 !important;
 }
 
+/* BULLET LIST (Used in QA Process) */
+.qa-card-list {
+  list-style: disc;
+  padding-left: 1.7rem;
+  margin: 0 1.5rem 1.5rem;
+}
+
+.qa-card-list li {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.35rem;
+}
+
+/* -----------------------------------------
+   QA APPLICATION AREAS — SD STYLE
+------------------------------------------*/
 .qa-domain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+  gap: 2.5rem !important;
+  margin-top: 3rem !important;
 }
 
 .qa-domain-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  border-left: 4px solid hsl(var(--primary));
-  transition: all 0.3s ease;
+  background: #fff !important;
+  padding: 2.5rem !important;
+  border-radius: 0 !important;
+
+  /* SD shadow */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12) !important;
+
+  transition: all 0.35s ease !important;
 }
 
 .qa-domain-card:hover {
-  transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(35, 56, 255, 0.1);
+  transform: translateY(-20px) !important;
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25) !important;
 }
 
 .qa-domain-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin-bottom: 0.75rem;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.2rem !important;
+  color: hsl(var(--navy)) !important;
 }
 
 .qa-domain-desc {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-  margin: 0;
+  font-size: 1.05rem !important;
+  line-height: 1.85 !important;
+  color: #444 !important;
 }
 
+/* -----------------------------------------
+   TWO COLUMN SECTIONS
+------------------------------------------*/
 .qa-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -147,18 +185,22 @@
 }
 
 .qa-list li {
-  color: hsl(var(--foreground));
-  line-height: 2;
   font-size: 1rem;
+  line-height: 2;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.7rem;
 }
 
+/* IMAGE (Right Side) */
 .qa-quality-image {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
+  width: 80%;
+  height: 260px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* -----------------------------------------
+   FEATURES
+------------------------------------------*/
 .qa-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -169,7 +211,7 @@
 .qa-feature-card {
   background: white;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 0;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -186,33 +228,29 @@
 }
 
 .qa-feature-text {
-  color: hsl(var(--foreground));
   font-weight: 600;
   margin: 0;
 }
 
+/* -----------------------------------------
+   RESPONSIVE
+------------------------------------------*/
 @media (max-width: 768px) {
-  .qa-hero {
-    padding: 3rem 1rem;
-  }
-
   .qa-section {
     padding: 3rem 1rem;
   }
 
-  .qa-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .qa-domain-grid {
-    grid-template-columns: 1fr;
+  .qa-grid,
+  .qa-domain-grid,
+  .qa-features-grid {
+    grid-template-columns: 1fr !important;
   }
 
   .qa-two-col {
     grid-template-columns: 1fr;
   }
 
-  .qa-features-grid {
-    grid-template-columns: 1fr;
+  .qa-hero {
+    padding: 3rem 1rem;
   }
 }

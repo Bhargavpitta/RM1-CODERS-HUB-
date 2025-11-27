@@ -1,3 +1,6 @@
+/* -----------------------------------------------------------
+   HERO SECTION
+----------------------------------------------------------- */
 .sd-hero {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
   color: white;
@@ -7,287 +10,439 @@
 
 .sd-hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   margin: 0;
-}
-
-.sd-section {
-  padding: 5rem 2rem;
-}
-
-.sd-bg-light {
-  background: hsl(var(--muted));
-}
-
-.sd-section-title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  color: hsl(var(--navy));
-  margin-bottom: 1.5rem;
-  text-align: center;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: titleReveal 0.8s ease-out forwards;
 }
 
 .sd-intro-text {
-  max-width: 1000px;
-  margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: hsl(var(--foreground));
-  text-align: justify;
+  line-height: 2.1;   /* increased vertical spacing */
+}
+/* Center align ALL section headers */
+.sd-content-header {
+  text-align: center !important;
 }
 
-.sd-content-header {
-  text-align: center;
-  margin-bottom: 3rem;
+/* Center align section title + subtitle inside it */
+.sd-content-header .sd-section-title,
+.sd-content-header .sd-subtitle {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -----------------------------------------------------------
+   GLOBAL TITLE ANIMATION
+----------------------------------------------------------- */
+.sd-section-title,
+.sd-subsection-title,
+.sd-company-name {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: titleReveal 0.7s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+    letter-spacing: 1px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0;
+  }
+}
+
+/* -----------------------------------------------------------
+   SECTION WRAPPER
+----------------------------------------------------------- */
+.sd-section {
+  padding: 4rem 2.5rem;
+}
+
+.sd-bg-light {
+  background: white;
+}
+
+.sd-section-title {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: hsl(var(--navy));
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .sd-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   color: hsl(var(--muted-foreground));
-  margin-top: 0.5rem;
 }
+
+
+/* -----------------------------------------------------------
+   UPDATED SDLC / TECH CARDS (EXACT SCREENSHOT STYLE)
+----------------------------------------------------------- */
 
 .sd-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
   margin-top: 3rem;
 }
 
+/* Clean white card */
 .sd-card {
-  background: white;
-  border-radius: 1rem;
+  background: #ffffff;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Hover lift */
 .sd-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
 }
 
+/* Larger image — no border radius */
 .sd-card-image {
-  width: 100%;
-  height: 220px;
+  width: 80%;
+  height: 260px;
   object-fit: cover;
+  border-radius: 0 !important;
 }
 
+/* Card Title */
 .sd-card-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin: 1.5rem 1.5rem 1rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0b1b5a;
   text-align: center;
+  margin: 1.6rem 1rem 1rem;
 }
 
-.sd-card-desc {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-  margin: 0 1.5rem 1.5rem;
-  white-space: pre-line;
-  font-size: 0.9375rem;
-}
-
-.sd-card-tech {
-  color: hsl(var(--muted-foreground));
-  margin: 0 1.5rem 1.5rem;
+/* Card Tech/Description */
+.sd-card-desc,
+.sd-tech-text {
   text-align: center;
-  font-size: 0.9375rem;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.75;
+  margin: 0 1.5rem 1.6rem;
+}
+/* SDLC Bullet List */
+.sd-card-list {
+  list-style: none;
+  padding: 0 1.6rem 1.8rem;
+  margin: 0;
+  text-align: left;
 }
 
+.sd-card-list li {
+  font-size: 0.95rem;       /* smaller text */
+  color: #444;
+  line-height: 1.55;
+  margin-bottom: 0.7rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* custom dot */
+.sd-card-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0b1b5a;
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sd-card-image {
+    height: 200px;
+  }
+
+  .sd-card-title {
+    font-size: 1.25rem;
+  }
+
+  .sd-tech-text,
+  .sd-card-desc {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* -----------------------------------------------------------
+   DOMAIN CARDS
+----------------------------------------------------------- */
 .sd-domain-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
   margin-top: 3rem;
 }
 
 .sd-domain-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  border-left: 4px solid hsl(var(--primary));
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 0 !important;
+  min-height: 230px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
   transition: all 0.3s ease;
 }
 
 .sd-domain-card:hover {
-  transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(35, 56, 255, 0.1);
+  transform: translateY(-20px);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.25);
 }
 
 .sd-domain-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
 
 .sd-domain-desc {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #444;
+}
+
+/* -----------------------------------------------------------
+   QUALITY & COMPLIANCE SECTION
+----------------------------------------------------------- */
+.sd-quality-intro {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 2.4rem;
+  max-width: 650px;
+}
+
+.sd-list li {
+  font-size: 1rem;
+  line-height: 2;
+  margin-bottom: 0.45rem;
+}
+
+.sd-quality-image {
+  width: 85%;
+  max-width: 500px;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(35px) scale(1.06);
+  animation: imageFloatIn 0.9s ease-out forwards;
+  animation-delay: 0.25s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  object-fit: cover;
+  margin-left: auto;
+}
+
+@keyframes imageFloatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(1.06);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .sd-two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-top: 2rem;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-top: 3rem;
+  padding-right: 2rem;
 }
 
-.sd-quality-intro {
-  font-size: 1rem;
-  color: hsl(var(--foreground));
-  margin-bottom: 1.5rem;
-}
-
-.sd-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sd-list li {
-  color: hsl(var(--foreground));
-  line-height: 2;
-  font-size: 1rem;
-}
-
-.sd-quality-image {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.sd-subsection-title {
-  font-size: 1.75rem;
-  color: hsl(var(--navy));
-  margin: 3rem 0 1rem;
-}
-
-.sd-company-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: hsl(var(--foreground));
-  margin-bottom: 1.5rem;
-}
-
-.sd-expertise-text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: hsl(var(--foreground));
-  text-align: justify;
-}
-
-.sd-mobile-services {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-  justify-content: center;
-}
-
+/* -----------------------------------------------------------
+   FEATURES & MOBILE SERVICES
+----------------------------------------------------------- */
 .sd-service-tag {
   background: hsl(var(--primary));
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-weight: 600;
-  font-size: 0.875rem;
-}
-
-.sd-mobile-intro {
-  font-size: 1rem;
-  color: hsl(var(--foreground));
-  margin: 2rem 0 1rem;
-}
-
-.sd-platform-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.sd-platform-list li {
-  color: hsl(var(--foreground));
-  line-height: 2;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.sd-process-list {
-  padding-left: 1.5rem;
-  margin: 0;
-}
-
-.sd-process-list li {
-  color: hsl(var(--foreground));
-  line-height: 2;
-  font-size: 1rem;
-  margin-bottom: 1rem;
 }
 
 .sd-features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
   gap: 2rem;
-  margin-top: 3rem;
 }
 
 .sd-feature-card {
-  background: white;
   padding: 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
 }
 
-.sd-feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+.sd-expertise-text {
+  line-height: 2;
+  margin-bottom: 1.8rem;
 }
 
-.sd-feature-icon {
-  color: hsl(var(--primary));
+.sd-section-title.expertise-title {
+  margin-bottom: 1.8rem;
+}
+
+.sd-subsection-title {
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.sd-feature-text {
-  color: hsl(var(--foreground));
+.sd-company-name {
+  margin-top: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+/* -----------------------------------------------------------
+   MOBILE APP DEVELOPMENT TABS
+----------------------------------------------------------- */
+.sd-tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.sd-tab-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  border: 2px solid hsl(var(--navy));
+  background: transparent;
   font-weight: 600;
-  margin: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: hsl(var(--navy));
+  font-size: 0.98rem;
+}
+
+.sd-tab-btn.active {
+  background: hsl(var(--navy));
+  color: #fff;
+  border-color: hsl(var(--navy));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.sd-tab-btn:hover {
+  transform: translateY(-2px);
+}
+
+.sd-tab-content {
+  background: #fff;
+  border-radius: 0;
+  padding: 2rem;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+.sd-tab-list {
+  padding-left: 1.2rem;
+}
+
+.sd-tab-list li {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  margin-bottom: 0.5rem;
+}
+
+.sd-process-list li {
+  margin-bottom: 1rem;
+  line-height: 1.8;
 }
 
 .sd-enterprise-text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: hsl(var(--foreground));
-  text-align: justify;
+  margin-bottom: 1.8rem;
+  line-height: 1.9;
 }
 
+/* -----------------------------------------------------------
+   RESPONSIVE FIXES
+----------------------------------------------------------- */
 @media (max-width: 768px) {
-  .sd-hero {
-    padding: 3rem 1rem;
-  }
-
-  .sd-section {
-    padding: 3rem 1rem;
-  }
-
-  .sd-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sd-domain-grid {
-    grid-template-columns: 1fr;
-  }
-
   .sd-two-col {
     grid-template-columns: 1fr;
+    padding-right: 0;
   }
 
-  .sd-features-grid {
-    grid-template-columns: 1fr;
+  .sd-quality-image {
+    width: 100%;
+    margin-top: 2rem;
   }
+
+  .sd-section-title {
+    text-align: center;
+  }
+
+  .sd-tab-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sd-tab-container {
+    justify-content: center;
+  }
+
+  .sd-card-image {
+    height: 200px;
+  }
+
+  .sd-card-title {
+    font-size: 1.25rem;
+  }
+
+  .sd-card-tech,
+  .sd-card-desc {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* -----------------------------------------------------------
+   CENTER ALL MAIN SECTION HEADINGS & SUBHEADINGS
+----------------------------------------------------------- */
+
+/* Main section titles (H2 in all sections) */
+.sd-section-title {
+  text-align: center !important;
+}
+
+/* Subtitles under each section title */
+.sd-subtitle,
+.sd-subsection-title,
+.sd-company-name {
+  text-align: center !important;
+}
+
+/* Intro text right under titles */
+.sd-intro-text {
+  text-align: center !important;
+}
+
+/* Center section header groups */
+.sd-content-header {
+  text-align: center !important;
+}
+
+/* Special cases (Expertise, Mobile Services, Enterprise, etc.) */
+.expertise-title {
+  text-align: center !important;
 }

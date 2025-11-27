@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Zap, BarChart3, Bell, Wallet, Wrench, Package } from 'lucide-react';
@@ -47,7 +48,54 @@ const iconMap: Record<number, any> = {
   6: Package
 };
 
+/* ------------------------------
+   MOBILE APP TAB DATA
+------------------------------ */
+
+const mobileTabs = [
+  "Native App Development",
+  "Cross-Platform App Development",
+  "Enterprise Mobility Solutions",
+  "UI&UX Design Prototyping",
+  "App Moderization&Migration"
+];
+
+const tabDetails: Record<string, string[]> = {
+  "Native App Development": [
+    "We create high-performance apps designed specifically for each platform.",
+    "iOS (Swift, Objective-C): Smooth, responsive, and aligned with Apple’s design principles.",
+    "Android (Kotlin, Java): Scalable, secure, and optimized for diverse Android devices.",
+    "Native apps provide top-notch speed, security, and performance, making them ideal for feature-rich, mission-critical solutions."
+  ],
+  "Cross-Platform App Development": [
+    "Single codebase for both Android and iOS using Flutter or React Native.",
+    "Faster development cycles with reduced time-to-market.",
+    "Consistent UI and user experience across platforms.",
+    "Cost-effective solution without compromising on performance and quality."
+  ],
+ "Enterprise Mobility Solutions": [
+    "Secure apps for workforce management and productivity.",
+    "Integration with ERP, CRM, and HRM systems.",
+    "Advanced authentication and access control for enterprises.",
+    "Real-time data access and synchronization for field teams."
+  ],
+  "UI&UX Design Prototyping": [
+    "Human-centered design approach for intuitive experiences.",
+    "Wireframes, prototypes, and design systems for consistency.",
+    "Focus on accessibility and seamless navigation.",
+    "Interactive prototypes to validate user journeys before development."
+  ],
+  "App Moderization&Migration": [
+    "Upgrade legacy apps to modern, scalable frameworks.",
+    "Migrate apps to cloud-native environments.",
+    "Optimize apps for new OS versions and devices.",
+    "Improve performance, security, and maintainability of existing applications."
+  ]
+};
+
 const SoftwareDevelopment = () => {
+  const [activeTab, setActiveTab] = useState<string>("Native App Development");
+
   const [headerRef, headerInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [sdlcRef, sdlcInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [techRef, techInView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -81,39 +129,40 @@ const SoftwareDevelopment = () => {
         </div>
       </section>
 
-      {/* SDLC Framework */}
-      <section className="sd-section sd-bg-light">
-        <div className="container-custom">
-          <motion.div
-            ref={sdlcRef}
-            initial={{ opacity: 0, y: 30 }}
-            animate={sdlcInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="sd-content-header"
-          >
-            <h2 className="sd-section-title font-display">Strong SDLC Framework</h2>
-            <p className="sd-subtitle">We adapt a phase-driven development methodology that guarantees predictable outcomes.</p>
-          </motion.div>
+     {/* SDLC Framework */}
+<section className="sd-section sd-bg-light">
+  <div className="container-custom">
 
-          <div className="sd-grid">
-            {sdlcSteps.map((step, index) => (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={sdlcInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="sd-card"
-              >
-                <img src={imageMap[step.image]} alt={step.title} className="sd-card-image" />
-                <h3 className="sd-card-title font-display">{step.title}</h3>
-                {step.description && (
-                  <p className="sd-card-desc">{step.description}</p>
-                )}
-              </motion.div>
-            ))}
-          </div>
+    <div className="sd-content-header">
+      <h2 className="sd-section-title font-display">Strong SDLC Framework</h2>
+      <p className="sd-subtitle">We adapt a phase-driven development methodology that guarantees predictable outcomes.</p>
+    </div>
+
+    <div className="sd-grid">
+      {sdlcSteps.map((step) => (
+        <div key={step.id} className="sd-card">
+          <img
+            src={imageMap[step.image]}
+            alt={step.title}
+            className="sd-card-image"
+          />
+          <h3 className="sd-card-title font-display">{step.title}</h3>
+
+          {step.points && (
+  <ul className="sd-card-list">
+    {step.points.map((p, i) => (
+      <li key={i}>{p}</li>
+    ))}
+  </ul>
+)}
+
         </div>
-      </section>
+      ))}
+    </div>
+
+  </div>
+</section>
+
 
       {/* Technical Expertise */}
       <section className="sd-section">
@@ -140,7 +189,7 @@ const SoftwareDevelopment = () => {
               >
                 <img src={imageMap[tech.image]} alt={tech.title} className="sd-card-image" />
                 <h3 className="sd-card-title font-display">{tech.title}</h3>
-                <p className="sd-card-tech">{tech.technologies}</p>
+                <p className="sd-tech-text">{tech.technologies}</p>
               </motion.div>
             ))}
           </div>
@@ -216,35 +265,62 @@ const SoftwareDevelopment = () => {
       {/* Our Expertise */}
       <section className="sd-section">
         <div className="container-custom">
-          <h2 className="sd-section-title font-display">Our Expertise</h2>
+         <h2 className="sd-section-title expertise-title font-display">Our Expertise</h2>
           <h3 className="sd-subsection-title font-display">Custom Software Development</h3>
           <h4 className="sd-company-name">RMI Coders – Custom Software Development</h4>
-          <div className="sd-two-col">
+        <div className="sd-two-col expertise-layout">
+
             <div>
               <p className="sd-expertise-text">
-                At <strong>RMI Coders</strong>, we specialize in building custom software solutions that align perfectly with our clients' unique business needs. With a strong foundation in the Software Development Life Cycle (SDLC) and a proven track record of delivering scalable, secure, and future-ready applications, we empower organizations to achieve digital transformation with confidence.
-              </p>
+  At <b>RM1 Coders</b>, we specialize in building custom software solutions that align perfectly 
+  with our clients’ unique business needs. With a strong SDLC foundation and a proven track 
+  record of delivering scalable, secure applications, we empower organizations to achieve 
+  digital transformation with confidence.
+</p>
+
+<p className="sd-expertise-text">
+  Our team combines deep technical expertise, agile methodologies, and domain knowledge to 
+  deliver software that not only meets requirements but also creates long-term value.
+</p>
+
             </div>
             <img src={customSoftware} alt="Custom Software Development" className="sd-quality-image" />
           </div>
         </div>
       </section>
 
-      {/* Mobile App Development */}
+      {/* Mobile App Development – UPDATED WITH TABS */}
       <section className="sd-section sd-bg-light">
         <div className="container-custom">
           <h2 className="sd-section-title font-display">Mobile App Development Services</h2>
-          <div className="sd-mobile-services">
-            {mobileAppServices.map((service, index) => (
-              <div key={index} className="sd-service-tag">{service}</div>
+
+          {/* Tab Buttons */}
+          <div className="sd-tab-container">
+            {mobileTabs.map((tab) => (
+              <button
+                key={tab}
+                className={`sd-tab-btn ${activeTab === tab ? "active" : ""}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
             ))}
           </div>
-          <p className="sd-mobile-intro">We create high-performance apps designed specifically for each platform:</p>
-          <ul className="sd-platform-list">
-            <li><strong>iOS (Swift, Objective-C):</strong> Smooth, responsive, and aligned with Apple's design principles.</li>
-            <li><strong>Android (Kotlin, Java):</strong> Scalable, secure, and optimized for diverse Android devices.</li>
-            <li><strong>Native apps</strong> provide top-notch speed, security, and performance, making them ideal for feature-rich, mission-critical solutions.</li>
-          </ul>
+
+          {/* Tab Content */}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="sd-tab-content"
+          >
+            <ul className="sd-tab-list">
+              {tabDetails[activeTab]?.map((point, index) => (
+                <li key={index}>• {point}</li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </section>
 

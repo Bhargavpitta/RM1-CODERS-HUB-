@@ -1,3 +1,7 @@
+/* -----------------------------------------------------------
+   HERO
+----------------------------------------------------------- */
+
 .it-hero {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
   color: white;
@@ -7,124 +11,114 @@
 
 .it-hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   margin: 0;
 }
 
-.it-section {
-  padding: 5rem 2rem;
-}
-
-.it-bg-light {
-  background: hsl(var(--muted));
-}
-
-.it-section-title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  color: hsl(var(--navy));
-  margin-bottom: 1.5rem;
-  text-align: center;
+/* Intro paragraph */
+.intro-wrapper {
+  text-align: left !important;
 }
 
 .it-intro-text {
   max-width: 1000px;
   margin: 0 auto;
   font-size: 1rem;
-  line-height: 1.8;
   color: hsl(var(--foreground));
-  text-align: justify;
+  text-align: left !important;
+  line-height: 2.1 !important;
+}
+
+/* -----------------------------------------------------------
+   SECTION SPACING
+----------------------------------------------------------- */
+
+.it-section {
+  padding: 4rem 2.5rem !important;
+}
+
+/* -----------------------------------------------------------
+   TITLES & SUBHEADINGS
+----------------------------------------------------------- */
+
+.it-section-title {
+  font-size: clamp(2rem, 3vw, 2.6rem) !important;
+  font-weight: 700 !important;
+  color: hsl(var(--navy)) !important;
+  margin-bottom: 1.5rem !important;
+  text-align: left !important;
 }
 
 .it-content-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  text-align: left !important;
 }
 
 .it-subtitle {
-  font-size: 1.125rem;
-  color: hsl(var(--muted-foreground));
-  margin-top: 0.5rem;
+  font-size: 1.15rem !important;
+  color: hsl(var(--muted-foreground)) !important;
+  text-align: left !important;
 }
 
-.it-grid {
+/* -----------------------------------------------------------
+   GRID LAYOUT (Unified for cards)
+----------------------------------------------------------- */
+
+.it-grid,
+.it-domain-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
   margin-top: 3rem;
 }
 
-.it-card {
+/* -----------------------------------------------------------
+   UNIFIED CARD STYLE
+----------------------------------------------------------- */
+
+.it-card,
+.it-domain-card {
   background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  min-height: 260px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
 }
 
-.it-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+.it-card:hover,
+.it-domain-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
 }
 
 .it-card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  display: none !important;
 }
 
-.it-card-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin: 1.5rem 1.5rem 1rem;
-  text-align: center;
-}
-
-.it-card-desc {
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-  margin: 0 1.5rem 1.5rem;
-  white-space: pre-line;
-  font-size: 0.9375rem;
-}
-
-.it-card-tech {
-  color: hsl(var(--muted-foreground));
-  margin: 0 1.5rem 1.5rem;
-  text-align: center;
-  font-size: 0.9375rem;
-}
-
-.it-domain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.it-domain-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  border-left: 4px solid hsl(var(--primary));
-  transition: all 0.3s ease;
-}
-
-.it-domain-card:hover {
-  transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(35, 56, 255, 0.1);
-}
-
+.it-card-title,
 .it-domain-title {
-  font-size: 1.25rem;
-  color: hsl(var(--navy));
-  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  color: #0b1f4d;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
+.it-card-desc,
+.it-card-tech,
 .it-domain-desc {
-  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+  color: #444;
   line-height: 1.7;
   margin: 0;
+  text-align: left;
 }
+
+/* -----------------------------------------------------------
+   TWO-COLUMN LAYOUTS
+----------------------------------------------------------- */
 
 .it-two-col {
   display: grid;
@@ -148,16 +142,21 @@
 
 .it-list li {
   color: hsl(var(--foreground));
-  line-height: 2;
   font-size: 1rem;
+  line-height: 2;
+  margin-bottom: 0.7rem;
 }
 
 .it-quality-image {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  height: 260px;
+  border-radius: 0;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
+
+/* -----------------------------------------------------------
+   SUPPORT FEATURES (Original look)
+----------------------------------------------------------- */
 
 .it-features-grid {
   display: grid;
@@ -169,26 +168,53 @@
 .it-feature-card {
   background: white;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 0;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
 }
 
 .it-feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
 .it-feature-icon {
+  display: block;
   color: hsl(var(--primary));
   margin-bottom: 1rem;
 }
 
 .it-feature-text {
   color: hsl(var(--foreground));
-  font-weight: 600;
-  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* -----------------------------------------------------------
+   COMPLIANCE SECTION FIXES
+----------------------------------------------------------- */
+
+.compliance-section {
+  background: #ffffff !important;
+}
+
+.compliance-section .it-quality-image {
+  width: 80% !important;
+  height: 260px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* -----------------------------------------------------------
+   MEDIA QUERIES — CLEANED
+----------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .it-grid,
+  .it-domain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -200,19 +226,47 @@
     padding: 3rem 1rem;
   }
 
-  .it-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .it-domain-grid {
-    grid-template-columns: 1fr;
-  }
-
   .it-two-col {
     grid-template-columns: 1fr;
   }
+}
 
-  .it-features-grid {
+@media (max-width: 600px) {
+  .it-grid,
+  .it-domain-grid {
     grid-template-columns: 1fr;
   }
 }
+
+/* -----------------------------------------------------------
+   FORCE CENTERING OF ALL IT SUPPORT HEADINGS (NON-DESTRUCTIVE)
+----------------------------------------------------------- */
+
+/* Center all H2 section titles */
+.it-section-title {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center subtitles */
+.it-subtitle {
+  text-align: center !important;
+}
+
+/* Center section header blocks */
+.it-content-header {
+  text-align: center !important;
+}
+
+/* Center hero title */
+.it-hero-title {
+  text-align: center !important;
+}
+
+/* Center titles in 2-column sections (Compliance, Why Choose Us) */
+.it-two-col ~ .it-section-title,
+.it-section h2.it-section-title {
+  text-align: center !important;
+}
+

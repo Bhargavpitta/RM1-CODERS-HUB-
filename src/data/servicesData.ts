@@ -52,6 +52,7 @@ export const servicesData = [
     title: "Quality Assurance",
     description: "Rigorous testing processes to ensure bug-free, high-performance applications.",
     icon: "settings"
+  },
   }
 ];
 
