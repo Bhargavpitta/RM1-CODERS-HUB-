@@ -64,14 +64,19 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="contact-map">
-              <div className="map-placeholder">
-                <MapPin size={48} className="map-icon" />
-                <p>Vasavi Sky City</p>
-                <a href="#" className="map-link">View larger map</a>
-              </div>
-            </div>
-          </motion.div>
+           <div className="contact-map">
+           <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.532789823666!2d78.3643484!3d17.4386117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93822d34b1ed%3A0x5458b73c6cf18629!2sVasavi%20Sky%20City!5e0!3m2!1sen!2sin!4v1732689000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, borderRadius: "12px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+
+          </div>
+        </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
