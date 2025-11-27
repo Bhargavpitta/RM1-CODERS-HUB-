@@ -34,6 +34,11 @@ const TwitterXIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
+type NavLink = {
+  label: string;
+  href: string;
+  type: 'scroll' | 'route';
+};
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -66,9 +71,13 @@ const Navbar = () => {
     };
   }, []);
 
-  const navLinks = [
-    { label: 'Clients', href: '#' },
-    { label: 'Careers', href: '#' }
+  // ---- NAV LINKS CONFIG ----
+  const navLinks: NavLink[] = [
+    { label: 'Home', href: '#home', type: 'scroll' },
+    { label: 'About Us', href: '/about-us', type: 'route' },
+    { label: 'Contact Us', href: '/contact-us', type: 'route' },
+    { label: 'Clients', href: '#clients', type: 'scroll' },
+    { label: 'Careers', href: '#careers', type: 'scroll' }
   ];
 
   const closeMobileStates = () => {
@@ -77,53 +86,53 @@ const Navbar = () => {
     setMobileIndustriesOpen(false);
   };
 
+  // Generic scroll helper for #section links (used by services/industries/mobile)
   const scrollToSection = (href: string) => {
+    const doScroll = () => {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     if (!isHomePage) {
       navigate('/');
-      return;
-    }
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
-    closeMobileStates();
-    { label: 'Home', href: '#home', type: 'scroll' },
-    { label: 'About Us', href: '/about-us', type: 'route' },
-    { label: 'Contact Us', href: '/contact-us', type: 'route' }
-  ];
-
-  const handleNavClick = (link: any) => {
-    if (link.type === 'route') {
-      navigate(link.href);
+      // small delay to ensure DOM is ready
+      setTimeout(doScroll, 300);
     } else {
-      if (!isHomePage) {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.querySelector(link.href);
-          element?.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-      } else {
-        const element = document.querySelector(link.href);
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }
+      doScroll();
     }
 
-    setMobileMenuOpen(false);
+    closeMobileStates();
     setServicesOpen(false);
     setIndustriesOpen(false);
+  };
+
+  // Handle top nav items (mix of routes and scroll links)
+  const handleNavClick = (link: NavLink) => {
+    if (link.type === 'route') {
+      navigate(link.href);
+      closeMobileStates();
+      setServicesOpen(false);
+      setIndustriesOpen(false);
+      return;
+    }
+
+    // scroll type
+    scrollToSection(link.href);
   };
 
   const handleServiceClick = (serviceName: string) => {
     const name = serviceName.toLowerCase().trim();
 
     const serviceRoutes: Record<string, string> = {
-      "software development": "/software-development",
-      "artificial intelligence": "/artificial-intelligence",
-      "web development": "/web-development",
-      "ui/ux design": "/uiux-design",
-      "devops services": "/devops",
-      "cms development": "/cms-development",
-      "it support services": "/it-support",
-      "project management": "/project-management",
-      "quality assurance": "/quality-assurance"
+      'software development': '/software-development',
+      'artificial intelligence': '/artificial-intelligence',
+      'web development': '/web-development',
+      'ui/ux design': '/uiux-design',
+      'devops services': '/devops',
+      'cms development': '/cms-development',
+      'it support services': '/it-support',
+      'project management': '/project-management',
+      'quality assurance': '/quality-assurance'
     };
 
     const route = serviceRoutes[name];
@@ -230,7 +239,7 @@ const Navbar = () => {
                 {navLinks.map((link) => (
                   <button
                     key={link.label}
-                    onClick={() => scrollToSection(link.href)}
+                    onClick={() => handleNavClick(link)}
                     className="nav-link nav-link-btn"
                   >
                     {link.label}
@@ -365,7 +374,7 @@ const Navbar = () => {
                 {navLinks.map((link) => (
                   <button
                     key={link.label}
-                    onClick={() => scrollToSection(link.href)}
+                    onClick={() => handleNavClick(link)}
                     className="mobile-nav-link"
                   >
                     {link.label}

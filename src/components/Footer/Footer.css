@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(var(--navy)));
+  background: #07185b;
   color: white;
   padding: 5rem 0 2rem;
   position: relative;
@@ -22,7 +22,8 @@
 .footer-locations {
   text-align: left;       /* changed */
   margin-bottom: 4rem;
-  padding-left: 2rem;     /* optional for spacing from left */
+  padding-left: 2rem;
+  color: rgba(255, 255, 255, 0.845);     /* optional for spacing from left */
 }
 
 .footer-locations-title {
@@ -55,7 +56,7 @@
 .location-address {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
 }
 
 .footer-divider {
@@ -76,6 +77,7 @@
   grid-template-columns: 2fr 1fr 1.2fr;
   gap: 3rem;
   margin-bottom: 3rem;
+  margin-left: 20px;
 }
 
 .footer-logo-text {
@@ -83,6 +85,7 @@
   font-weight: 800;
   margin: 0;
   color: white;
+  
 }
 
 .footer-logo-tagline {
