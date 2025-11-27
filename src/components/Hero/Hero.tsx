@@ -117,14 +117,6 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows */}
-      <button className="hero-arrow hero-arrow-left" onClick={prevSlide}>
-        <ChevronLeft size={32} />
-      </button>
-      <button className="hero-arrow hero-arrow-right" onClick={nextSlide}>
-        <ChevronRight size={32} />
-      </button>
-
       {/* Indicators */}
       <div className="hero-indicators">
         {slides.map((_, index) => (

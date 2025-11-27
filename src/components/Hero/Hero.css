@@ -124,7 +124,7 @@
   transform: translateY(-2px);
 }
 
-.hero-arrow {
+/* .hero-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -178,7 +178,7 @@
 .hero-indicator.active {
   background: white;
   transform: scale(1.2);
-}
+} */
 
 @media (max-width: 768px) {
   .hero {

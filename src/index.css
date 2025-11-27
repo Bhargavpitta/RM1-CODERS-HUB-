@@ -64,12 +64,10 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
-  html, body {
-  width: 100%;
+html, body{
+  width : 100%;
   overflow-x: hidden;
 }
-
   body {
     @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
     font-family: 'Inter', sans-serif;
