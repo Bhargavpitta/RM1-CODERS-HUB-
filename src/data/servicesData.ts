@@ -53,7 +53,6 @@ export const servicesData = [
     description: "Rigorous testing processes to ensure bug-free, high-performance applications.",
     icon: "settings"
   },
-  }
 ];
 
 export const industriesData = [
