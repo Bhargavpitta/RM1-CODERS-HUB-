@@ -33,7 +33,6 @@
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: white;
   line-height: 1.2;
 }
 
@@ -74,15 +73,9 @@
 
 .uiux-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
-}
-
-@media (max-width: 1024px) {
-  .uiux-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 640px) {
@@ -155,28 +148,36 @@
   font-weight: 500;
 }
 
-/* Services */
+/* Design Services */
 .uiux-services {
   background: white;
 }
 
 .uiux-services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 2.5rem 2rem;
   margin-top: 3rem;
+  padding: 0 3rem;
+  justify-items: center;
 }
 
 .uiux-service-card {
-  background: hsl(var(--muted));
-  padding: 2rem;
-  border-radius: 1rem;
-  transition: all 0.3s ease;
+  background: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
 .uiux-service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
 }
 
 .uiux-service-title {
@@ -189,42 +190,62 @@
   font-size: 0.9375rem;
   line-height: 1.7;
   color: hsl(var(--muted-foreground));
-  margin: 0;
 }
 
 /* Design Principles */
 .uiux-principles {
   background: hsl(var(--muted));
+  padding: 5rem 0;
 }
 
 .uiux-principles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 2.5rem 2rem;
   margin-top: 3rem;
+  padding: 0 3rem;
+  justify-items: center;
 }
 
 .uiux-principle-item {
   background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  border-left: 4px solid hsl(var(--primary));
+  padding: 3rem 2rem;
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.uiux-principle-item:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.18);
 }
 
 .uiux-principle-title {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: hsl(var(--navy));
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .uiux-principle-description {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.7;
-  color: hsl(var(--muted-foreground));
-  margin: 0;
+  color: #444;
 }
 
-/* CTA */
+@media (max-width: 768px) {
+  .uiux-services-grid,
+  .uiux-principles-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}
+
+/* CTA Section */
 .uiux-cta {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
   color: white;
@@ -241,7 +262,6 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   margin-bottom: 1rem;
-  color: white;
 }
 
 .uiux-cta-description {
@@ -266,19 +286,4 @@
   background: rgba(255, 255, 255, 0.95) !important;
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .uiux-hero {
-    padding: 4rem 1.5rem 3rem;
-  }
-
-  .uiux-hero-title {
-    font-size: 2rem;
-  }
-
-  .uiux-hero-subtitle {
-    font-size: 1rem;
-  }
 }

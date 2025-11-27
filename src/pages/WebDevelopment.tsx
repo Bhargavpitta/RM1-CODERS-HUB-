@@ -90,6 +90,7 @@ const WebDevelopment = () => {
       >
         <div className="container-custom">
           <h2 className="section-title">Technologies We Use</h2>
+
           <div className="web-grid">
             {webTechnologies.map((tech, index) => (
               <motion.div
@@ -102,12 +103,16 @@ const WebDevelopment = () => {
                 <div className="web-card-image">
                   <img src={techImages[index]} alt={tech.title} />
                 </div>
-                <h3 className="web-card-title">{tech.title}</h3>
-                <p className="web-card-description">{tech.description}</p>
-                <div className="web-tech-tags">
-                  {tech.technologies.map((t, i) => (
-                    <span key={i} className="web-tech-tag">{t}</span>
-                  ))}
+
+                <div className="web-card-content">
+                  <h3 className="web-card-title">{tech.title}</h3>
+                  <p className="web-card-description">{tech.description}</p>
+
+                  <div className="web-card-tech-list">
+                    {tech.technologies.map((t, i) => (
+                      <span key={i} className="tech-badge">{t}</span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -169,7 +174,7 @@ const WebDevelopment = () => {
         </div>
       </motion.section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="web-cta">
         <div className="web-cta-content">
           <h2 className="web-cta-title">Ready to Build Your Web Application?</h2>
