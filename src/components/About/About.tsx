@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import { CheckCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 import aboutImg1 from '@/assets/about-1.jpg';
 import aboutImg2 from '@/assets/about-2.jpg';
 import aboutImg3 from '@/assets/about-3.jpg';
@@ -11,6 +12,7 @@ import './About.css';
 const About = () => {
   const [activeTab, setActiveTab] = useState<'mission' | 'vision' | 'history'>('mission');
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const navigate = useNavigate();
 
   const tabs = [
     { key: 'mission', label: 'Our Mission' },
@@ -19,9 +21,12 @@ const About = () => {
   ];
 
   const tabContent = {
-    mission: '"To provide cutting-edge software development and support services, fostering growth and success for our clients through technology."',
-    vision: '"To be the leading technology partner globally, recognized for innovation, excellence, and transformative solutions."',
-    history: '"Founded with a vision to lead innovation, we have been transforming businesses for over 20 years with cutting-edge solutions."'
+    mission:
+      '"To provide cutting-edge software development and support services, fostering growth and success for our clients through technology."',
+    vision:
+      '"To be the leading technology partner globally, recognized for innovation, excellence, and transformative solutions."',
+    history:
+      '"Founded with a vision to lead innovation, we have been transforming businesses for over 20 years with cutting-edge solutions."'
   };
 
   const features = [
@@ -43,13 +48,26 @@ const About = () => {
           className="about-header"
         >
           <h2 className="section-title font-display">About Us</h2>
+
           <p className="about-intro">
-            <strong>RMI Coders Hub</strong> is a pioneering force in the software development and technology services industry, committed to transforming ideas into impactful solutions across a
-            broad spectrum of domains. Established with a vision to lead innovation, we specialize in software development projects, product development, and a wide array of services,
-            serving industries such as Banking, Finance, Healthcare, Manufacturing, e-Commerce, Education, Logistics, and beyond. Our mission is to empower businesses and
-            organizations by delivering cutting-edge, scalable, and customized technology solutions that address the unique challenges and opportunities within each sector.
+            <strong>RMI Coders Hub</strong> is a pioneering force in the software
+            development and technology services industry, committed to transforming
+            ideas into impactful solutions across a broad spectrum of domains.
+            Established with a vision to lead innovation, we specialize in
+            software development projects, product development, and a wide array
+            of services, serving industries such as Banking, Finance, Healthcare,
+            Manufacturing, e-Commerce, Education, Logistics, and beyond. Our
+            mission is to empower businesses and organizations by delivering
+            cutting-edge, scalable, and customized technology solutions that
+            address the unique challenges and opportunities within each sector.
           </p>
-          <Button type="primary" size="large" className="about-btn">
+
+          <Button
+            type="primary"
+            size="large"
+            className="about-btn"
+            onClick={() => navigate('/about-us')}
+          >
             View More →
           </Button>
         </motion.div>
@@ -75,7 +93,8 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="about-details"
           >
-            <p className="about-badge">Who We are</p>
+            <p className="about-badge">Who We Are</p>
+
             <h3 className="about-details-title font-display">
               Develop Industry-Leading Solutions With Our Expert
             </h3>
@@ -110,9 +129,15 @@ const About = () => {
             </div>
 
             <div className="about-contact">
-              <Button type="primary" size="large" className="about-contact-btn">
+              <Button
+                type="primary"
+                size="large"
+                className="about-contact-btn"
+                onClick={() => navigate('/contact')}
+              >
                 Contact Us →
               </Button>
+
               <div className="about-phone">
                 <div className="phone-icon">
                   <Phone size={20} />

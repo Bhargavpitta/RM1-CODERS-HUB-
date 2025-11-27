@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import { Mail, MapPin, Menu, X, ChevronDown } from 'lucide-react';
@@ -14,7 +13,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
-  
+
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
@@ -26,18 +25,27 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Contact Us', href: '#contact' }
+    { label: 'Home', href: '#home', type: 'scroll' },
+    { label: 'About Us', href: '/about-us', type: 'route' },
+    { label: 'Contact Us', href: '/contact-us', type: 'route' }
   ];
 
-  const scrollToSection = (href: string) => {
-    if (!isHomePage) {
-      navigate('/' + href);
-      return;
+  const handleNavClick = (link: any) => {
+    if (link.type === 'route') {
+      navigate(link.href);
+    } else {
+      if (!isHomePage) {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(link.href);
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      } else {
+        const element = document.querySelector(link.href);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+
     setMobileMenuOpen(false);
     setServicesOpen(false);
     setIndustriesOpen(false);
@@ -64,8 +72,11 @@ const Navbar = () => {
     if (route) {
       navigate(route);
     } else {
-      console.warn("Route not found for:", serviceName);
-      navigate("/#services");
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector("#services");
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
     }
 
     setServicesOpen(false);
@@ -88,9 +99,7 @@ const Navbar = () => {
                 <span>Support@rm1codershub.com</span>
               </div>
             </div>
-            <div className="top-bar-right">
-              {/* Social icons would go here */}
-            </div>
+            <div className="top-bar-right"></div>
           </div>
         </div>
       </div>
@@ -114,7 +123,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => handleNavClick(link)}
                   className="nav-link"
                 >
                   {link.label}
@@ -130,6 +139,7 @@ const Navbar = () => {
                 <button className="nav-link nav-dropdown-trigger">
                   Services <ChevronDown size={16} />
                 </button>
+
                 <AnimatePresence>
                   {servicesOpen && (
                     <motion.div
@@ -162,6 +172,7 @@ const Navbar = () => {
                 <button className="nav-link nav-dropdown-trigger">
                   Industries <ChevronDown size={16} />
                 </button>
+
                 <AnimatePresence>
                   {industriesOpen && (
                     <motion.div
@@ -174,7 +185,7 @@ const Navbar = () => {
                       {industriesData.map((industry) => (
                         <a
                           key={industry.id}
-                          onClick={() => scrollToSection('#contact')}
+                          onClick={() => navigate("/contact-us")}
                           className="dropdown-item"
                         >
                           {industry.title}
@@ -208,7 +219,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => handleNavClick(link)}
                   className="mobile-nav-link"
                 >
                   {link.label}

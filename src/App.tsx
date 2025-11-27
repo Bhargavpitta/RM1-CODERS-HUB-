@@ -15,6 +15,8 @@ import ITSupportServices from "./pages/ITSupportServices";
 import ProjectManagement from "./pages/ProjectManagement";
 import QualityAssurance from "./pages/QualityAssurance";
 import NotFound from "./pages/NotFound";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,8 @@ const App = () => (
           <Route path="/project-management" element={<ProjectManagement />} />
           <Route path="/quality-assurance" element={<QualityAssurance />} />
           <Route path="/business-analysis" element={<BusinessAnalysis />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
