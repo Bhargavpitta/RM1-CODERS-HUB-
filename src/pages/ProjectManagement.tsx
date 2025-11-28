@@ -41,7 +41,6 @@ const ProjectManagement = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
       
       <section className="pm-hero">
         <h1 className="pm-hero-title font-display">Project Management</h1>

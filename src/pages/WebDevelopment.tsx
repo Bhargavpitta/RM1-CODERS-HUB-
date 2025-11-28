@@ -30,7 +30,6 @@ const WebDevelopment = () => {
   return (
     <div className="web-page">
       <Navbar />
-      <Hero />
       
       {/* Hero Section */}
       <motion.section
