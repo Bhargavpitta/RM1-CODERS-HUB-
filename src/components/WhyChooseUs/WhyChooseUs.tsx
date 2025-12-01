@@ -10,7 +10,9 @@ const WhyChooseUs = () => {
   return (
     <section className="why-choose-us section-padding">
       <div className="container-custom">
-        <div className="why-choose-us-content">
+        <div className="why-choose-us-content equal-height-wrapper">
+          
+          {/* IMAGE */}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, x: -50 }}
@@ -21,6 +23,7 @@ const WhyChooseUs = () => {
             <img src={whyChooseUsImg} alt="Team collaboration" />
           </motion.div>
 
+          {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -47,6 +50,7 @@ const WhyChooseUs = () => {
               ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
